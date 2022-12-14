@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&family=DM+Serif+Display&family=Karla:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap");
+/* Start variables  */
+:root {
+  --header-font: "Karla", sans-serif;
+  --body-font: "Roboto", serif;
+  --main-font-size: 16px;
+  --main-dark: hsl(256, 26%, 20%);
+  --main-light: hsl(216, 30%, 68%);
+  --nav-color: hsl(270, 9%, 17%);
+  --gray: hsl(273, 4%, 51%);
+  --light-gray: hsl(0, 0%, 98%);
+}
+/* End variables  */
+
+/* Start Global Rules */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+h1,
+h1,
+h3 {
+  font-weight: normal;
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+/* End Global Rules */
+
+/* Start Header  */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 200px;
+  background-color: var(--light-gray);
+  font-size: var(--main-font-size);
+  font-family: var(--header-font);
+  height: 60px;
+  text-transform: uppercase;
+  z-index: 999;
+}
+header span {
+  display: block;
+  width: 35%;
+  font-weight: bold;
+  font-size: 20px;
+}
+header ul {
+  display: flex;
+  list-style: none;
+}
+header ul li a {
+  margin-left: 20px;
+  color: var(--gray);
+  transition: color 0.4s;
+}
+header ul li a:hover {
+  color: black;
+}
+header .view {
+  color: black;
+  border: 1px solid black;
+  padding: 10px 10px;
+  transition: color, background-color 0.3s;
+}
+header .view:hover {
+  color: var(--light-gray);
+  background-color: var(--main-dark);
+}
+@media (max-width: 1300px) {
+  header {
+    justify-content: space-between;
+    padding: 0 15px 0;
+  }
+  header ul {
+    display: none;
+  }
+  .drop-down {
+    background-color: var(--nav-color);
+    height: 500px;
+    background-image: url(.//images/bg-pattern-mobile-nav.svg);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 390px;
+    padding: 30px;
+    display: none;
+  }
+  .drop-down ul {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: var(--body-font);
+  }
+  .drop-down ul li {
+    padding: 10px 20px;
+    list-style: none;
+    margin: 10px;
+  }
+  .drop-down ul li a {
+    color: inherit;
+    transition: 0.4s;
+    width: 100%;
+    display: block;
+    padding: 10px;
+    border: 1px solid white;
+  }
+  .drop-down ul a:hover {
+    color: black;
+    background-color: white;
+  }
+  #burger {
+    cursor: pointer;
+  }
+}
+@media (min-width: 1301px) {
+  #burger {
+    display: none;
+  }
+  .drop-down {
+    display: none;
+  }
+}
+/* End Header  */
+
+/* Start main:first section  */
+.main-section::before {
+  background-image: url(./images/bg-pattern-intro-right-desktop.svg);
+  position: absolute;
+  top: 0px;
+  right: 0;
+  background-size: cover;
+  width: 370px;
+  height: 513px;
+  content: "";
+  z-index: 100;
+  overflow: hidden;
+}
+.main-section {
+  background-color: var(--main-dark);
+  padding: 100px 200px;
+  display: flex;
+  position: relative;
+  z-index: 0;
+}
+.main-section::after {
+  background-image: url(./images/bg-pattern-intro-left-desktop.svg);
+  position: absolute;
+  bottom: -191px;
+  left: 0px;
+  background-size: cover;
+  width: 126px;
+  height: 326px;
+  content: "";
+  z-index: 0;
+}
+section .main-text::before {
+  content: "";
+  background-color: var(--light-gray);
+  width: 100px;
+  height: 1px;
+  position: absolute;
+  top: 0px;
+}
+section .main-text {
+  padding-top: 50px;
+
+  position: relative;
+  color: white;
+  font-family: var(--body-font);
+  width: 50%;
+}
+section .main-text h1 {
+  font-family: "DM Serif Display", serif;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 60px;
+}
+section .main-text h1 span {
+  display: block;
+}
+section .main-text p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+section .main-text a {
+  padding: 10px 20px;
+  margin-top: 30px;
+  border: 1px solid white;
+  color: white;
+  text-transform: uppercase;
+  transition: background-color 0.4s;
+}
+section .main-text a:hover {
+  background-color: #fff;
+  color: #000;
+}
+section .main-img {
+  height: 500px;
+  position: absolute;
+  right: 200px;
+}
+@media (max-width: 1300px) {
+  .main-section::before {
+    display: none;
+  }
+  .main-section {
+    padding: 0;
+    flex-direction: column-reverse;
+  }
+  .main-section::after {
+    background-image: url(./images/bg-pattern-intro-right-mobile.svg);
+    background-repeat: no-repeat;
+    content: "";
+    position: absolute;
+    right: 0;
+    left: auto;
+  }
+  section .main-text::before {
+    display: none;
+  }
+  section .main-text {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 77px 42px;
+    position: relative;
+    color: white;
+    font-family: var(--body-font);
+    align-items: center;
+    justify-content: center;
+    font-weight: 100;
+    background-image: url(./images/bg-pattern-intro-left-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+  section .main-text h1 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  section .main-img {
+    position: static;
+    width: fit-content;
+    margin: auto;
+  }
+  .main-section::before {
+  }
+}
+@media screen {
+}
+/* End main:first section  */
+
+/* Start Second Section */
+.second-section {
+  margin: 150px 200px 100px;
+  font-family: var(--body-font);
+  font-size: var(--main-font-size);
+}
+.second-section h1::before {
+  content: "";
+  width: 120px;
+  height: 1px;
+  background-color: var(--gray);
+  position: absolute;
+  top: 0;
+}
+.second-section h1 {
+  font-family: "DM Serif Display", serif;
+  font-size: 60px;
+  padding-top: 30px;
+  position: relative;
+}
+.second-section .adds {
+  display: flex;
+  margin-top: 70px;
+  justify-content: space-between;
+}
+.second-section .adds div {
+  width: 30%;
+}
+.second-section .adds div h3 {
+  font-family: "DM Serif Display", serif;
+  font-size: 25px;
+  margin: 30px 0 15px;
+}
+.second-section .adds div p {
+  color: var(--gray);
+  line-height: 25px;
+  line-height: 1.7;
+}
+@media (max-width: 1300px) {
+  .second-section h1::before {
+    content: "";
+    width: 140px;
+    height: 1px;
+    background-color: var(--gray);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50%;
+  }
+  .second-section {
+    padding-top: 100px;
+    margin: 0;
+    text-align: center;
+  }
+  .second-section h1 {
+    font-size: 50px;
+  }
+  .second-section .adds {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .second-section .adds div {
+    width: 80%;
+    padding-bottom: 50px;
+  }
+}
+/* End Second Section */
+
+/* Start third Section  */
+.third-section {
+  margin: 150px 200px 100px;
+  font-family: var(--body-font);
+  font-size: var(--main-font-size);
+}
+.third-section .container {
+  background-image: url(./images/bg-pattern-how-we-work-desktop.svg);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: top;
+  justify-content: space-between;
+  background-color: var(--main-dark);
+  color: white;
+  padding: 40px 60px;
+  position: relative;
+}
+
+.third-section .container:first-child h1 {
+  font-family: "DM Serif Display", serif;
+  font-size: 60px;
+}
+.third-section .container:first-child span {
+  display: block;
+}
+.third-section .container a {
+  padding: 10px 20px;
+  border: 1px solid white;
+  color: white;
+  text-transform: uppercase;
+  position: absolute;
+  transition: background-color 0.4s ease 0s;
+  right: 60px;
+  top: 100px;
+}
+.third-section .container a:hover {
+  background-color: #fff;
+  color: #000;
+}
+@media (max-width: 1300px) {
+  .third-section {
+    margin: 26px;
+    margin-top: 60px;
+  }
+  .third-section .container {
+    background-image: url(./images/bg-pattern-how-we-work-mobile.svg);
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .third-section .container:first-child h1 {
+    font-size: 35px;
+    text-align: center;
+  }
+  .third-section .container a {
+    position: static;
+    margin: 10px;
+  }
+}
+/* End third Section  */
+
+/* Start footer  */
+footer {
+  background-image: url(./images/bg-pattern-footer-desktop.svg);
+  background-repeat: no-repeat;
+  text-transform: uppercase;
+  font-size: 14px;
+  background-color: var(--light-gray);
+  padding: 70px 200px;
+  font-family: var(--body-font);
+}
+footer .footer-head {
+  justify-content: space-between;
+  display: flex;
+  padding-bottom: 30px;
+  height: 48px;
+  border-bottom: 1px solid;
+  border-color: var(--gray);
+}
+footer .footer-head .social {
+  display: flex;
+}
+footer .footer-head .social img {
+  margin-left: 10px;
+  transition: filter 0.5s ease-in-out;
+  cursor: pointer;
+}
+footer .footer-head .social img:hover {
+  filter: brightness(0.5);
+}
+footer .footer-text {
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer-text h4 {
+  margin: 40px 0 20px;
+  color: var(--gray);
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+footer .footer-text li {
+  list-style: none;
+  line-height: 30px;
+  font-weight: bold;
+  font-size: smaller;
+  letter-spacing: 2px;
+  color: var(--main-dark);
+}
+@media (max-width: 1300px) {
+  footer {
+    background-image: url(./images/bg-pattern-footer-mobile.svg);
+    background-repeat: no-repeat;
+    text-transform: uppercase;
+    font-size: 14px;
+    background-color: var(--light-gray);
+    padding: 85px 50px;
+    font-family: var(--body-font);
+    margin-top: 120px;
+  }
+  footer .footer-head {
+    flex-wrap: wrap;
+    border-bottom: none;
+    justify-content: center;
+  }
+  footer .footer-head:first-child {
+    width: 100%;
+    padding: 0 80px;
+  }
+
+  footer .footer-head .social {
+    display: flex;
+    margin: 25px;
+  }
+  footer .footer-head .social img {
+    margin: 0 10px;
+    transition: filter 0.5s ease-in-out;
+    cursor: pointer;
+  }
+  footer .footer-text {
+    border-top: 1px solid;
+    margin-top: 50px;
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+    border-color: var(--gray);
+  }
+  footer .footer-text h4 {
+    margin-bottom: 30px;
+  }
+}
+/* End footer  */
+/*Start  Media queries   */
+
+/* End media quires*/
